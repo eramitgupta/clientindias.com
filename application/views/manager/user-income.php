@@ -60,12 +60,12 @@ require_once('template/head.php');
                                                             <td><?= $row['referral_code'] ?></td>
                                                             <td><?= $row['date'] ?></td>
                                                             <td>
-                                                                <button type="button" id="<?= $row['id'] ?>" value="<?= $row['wallet_money'] ?>" name="<?= $row['name'] ?>" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable" class="btn btn-primary user_income_view_manger">
-                                                                    <i class="fas fa-eye user_income_view_manger" id="<?= $row['id'] ?>" value="<?= $row['wallet_money'] ?>" name="<?= $row['name'] ?>"></i>
+                                                                <button type="button" id="<?= $row['id'] ?>" value="<?= $row['wallet_money'] ?>" name="<?= $row['name'] ?>" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable" class="btn btn-primary user_income_view_manager">
+                                                                    <i class="fas fa-eye user_income_view_manager" id="<?= $row['id'] ?>" value="<?= $row['wallet_money'] ?>" name="<?= $row['name'] ?>"></i>
                                                                 </button>
 
-                                                                <button type="button" id="<?= $row['id'] ?>" value="<?= $row['wallet_money'] ?>" name="<?= $row['name'] ?>" data-bs-toggle="modal" data-bs-target="#PayModalScrollable" class="btn btn-warning user_income_pay_manger">
-                                                                    <i class="fas fa-money-check-alt user_income_pay_manger" id="<?= $row['id'] ?>" value="<?= $row['wallet_money'] ?>" name="<?= $row['name'] ?>"></i>
+                                                                <button type="button" id="<?= $row['id'] ?>" value="<?= $row['wallet_money'] ?>" name="<?= $row['name'] ?>" data-bs-toggle="modal" data-bs-target="#PayModalScrollable" class="btn btn-warning user_income_pay_manager">
+                                                                    <i class="fas fa-money-check-alt user_income_pay_manager" id="<?= $row['id'] ?>" value="<?= $row['wallet_money'] ?>" name="<?= $row['name'] ?>"></i>
                                                                 </button>
                                                             </td>
 
@@ -109,9 +109,9 @@ require_once('template/head.php');
             <div class="modal-body">
                 <center>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" id="summary1" name="" data-name="" class="btn btn-primary user_income_view_manger_summary" value="1 Day">Today</button>
-                        <button type="button" id="summary2" name=""  data-name="" class="btn btn-warning user_income_view_manger_summary" value="7 Day">7 Day</button>
-                        <button type="button" id="summary3" name="" data-name="" class="btn btn-success user_income_view_manger_summary" value="30 Day">30 Day</button>
+                        <button type="button" id="summary1" name="" data-name="" class="btn btn-primary user_income_view_manager_summary" value="1 Day">Today</button>
+                        <button type="button" id="summary2" name=""  data-name="" class="btn btn-warning user_income_view_manager_summary" value="7 Day">7 Day</button>
+                        <button type="button" id="summary3" name="" data-name="" class="btn btn-success user_income_view_manager_summary" value="30 Day">30 Day</button>
                     </div>
                 </center>
                 <br>
@@ -176,7 +176,7 @@ require_once('template/head.php');
                         </div>
 
                         <div>
-                            <center><button type="button" id="PayUserSendManger" name="PayUserSendManger" class="btn btn-primary mt-2">Submit</button></center>
+                            <center><button type="button" id="PayUserSendmanager" name="PayUserSendmanager" class="btn btn-primary mt-2">Submit</button></center>
                         </div>
 
                     </div>

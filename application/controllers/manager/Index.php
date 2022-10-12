@@ -7,9 +7,9 @@ class Index extends CI_Controller
         parent::__construct();
         $admin = $this->session->userdata('Login_Auth');
         $this->load->model('Curd_model');
-        $AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manger');
+        $AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manager');
         $Login['loginData'] = $AuthLogin;
-        $this->load->view('manger/template/array', $Login);
+        $this->load->view('manager/template/array', $Login);
         if (empty($AuthLogin)) {
             $this->session->unset_userdata('Login_Auth');
             $array_msg = array('msg' => 'Access Denied!', 'icon' => 'error');
@@ -46,6 +46,6 @@ class Index extends CI_Controller
         $data['userCount'] = $this->Curd_model->CountsData('tbl_login',['role'=>'user']);
 
         $data['welcome'] = $this->welcome();
-        $this->load->view('manger/index', $data);
+        $this->load->view('manager/index', $data);
     }
 }

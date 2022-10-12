@@ -40,7 +40,7 @@ require_once('template/head.php');
                                                 <select class="form-control" name="role">
                                                         <option value="">Select</option>
                                                         <option value='admin'>Admin</option>
-                                                        <option value='manger'>Manger</option>
+                                                        <option value='manager'>manager</option>
 
                                                 </select>
                                                 <?= form_error('role'); ?>

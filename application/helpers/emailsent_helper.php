@@ -1,8 +1,7 @@
 <?php
 
- if(! function_exists('emialSent'))
- {
-	function emialSent($otp, $masg , $userEmail,$subject)
+if (!function_exists('emialSent')) {
+	function emialSent($otp, $masg, $userEmail, $subject)
 	{
 		$CI = &get_instance();
 		$CI->load->library('email');
@@ -18,7 +17,7 @@
 			'charset'   => 'utf-8',
 		);
 
-         $logo = base_url().'public/logo.png';
+		$logo = base_url() . 'public/logo.png';
 
 		$message = <<<HTML
 					<!DOCTYPE html>
@@ -128,5 +127,4 @@
 			return false;
 		}
 	}
-
- }
+}

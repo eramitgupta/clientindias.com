@@ -7,9 +7,9 @@ class User extends CI_Controller
 		parent::__construct();
 		$admin = $this->session->userdata('Login_Auth');
 		$this->load->model('Curd_model');
-		$AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manger');
+		$AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manager');
 		$Login['loginData'] = $AuthLogin;
-		$this->load->view('manger/template/array', $Login);
+		$this->load->view('manager/template/array', $Login);
 		if (empty($AuthLogin)) {
 			$this->session->unset_userdata('Login_Auth');
 			$array_msg = array('msg' => 'Access Denied!', 'icon' => 'error');
@@ -21,7 +21,7 @@ class User extends CI_Controller
 	public function user_income()
 	{
 		$data['userArray'] = $this->Curd_model->Select('tbl_login', ['role' => 'user']);
-		$this->load->view('manger/user-income', $data);
+		$this->load->view('manager/user-income', $data);
 	}
 
 	public function UserIncomeView()
@@ -88,14 +88,14 @@ class User extends CI_Controller
 	public function list()
 	{
 		$data['userArray'] = $this->Curd_model->Select('tbl_login', ['role' => 'user']);
-		$this->load->view('manger/user', $data);
+		$this->load->view('manager/user', $data);
 	}
 
 
 	public function user_edit($id)
 	{
 		$data['AccountArray'] = $this->Curd_model->getAccounts($id);
-		$this->load->view('manger/user-edit', $data);
+		$this->load->view('manager/user-edit', $data);
 	}
 
 	public function AccountEditCode()
@@ -104,11 +104,11 @@ class User extends CI_Controller
 		if ($this->Curd_model->update('tbl_login', ['id' => $array['id']], $array) == true) {
 			$array_msg = array('msg' => 'Successfully Update!', 'icon' => 'success');
 			$this->session->set_flashdata($array_msg);
-			redirect(base_url('manger/user/list'));
+			redirect(base_url('manager/user/list'));
 		} else {
 			$array_msg = array('msg' => 'Server Error!', 'icon' => 'error');
 			$this->session->set_flashdata($array_msg);
-			redirect(base_url('manger/user/list'));
+			redirect(base_url('manager/user/list'));
 		}
 	}
 
@@ -127,16 +127,16 @@ class User extends CI_Controller
 		if ($admin['id'] == $id) {
 			$array_msg = array('msg' => 'Can`t update myself !', 'icon' => 'error');
 			$this->session->set_flashdata($array_msg);
-			redirect(base_url('manger/user/list'));
+			redirect(base_url('manager/user/list'));
 		} else {
 			if ($this->Curd_model->update('tbl_login', ['id' => $id], ['status' => $status]) == true) {
 				$array_msg = array('msg' => 'Successfully Update!', 'icon' => 'success');
 				$this->session->set_flashdata($array_msg);
-				redirect(base_url('manger/user/list'));
+				redirect(base_url('manager/user/list'));
 			} else {
 				$array_msg = array('msg' => 'Server Error!', 'icon' => 'error');
 				$this->session->set_flashdata($array_msg);
-				redirect(base_url('manger/user/list'));
+				redirect(base_url('manager/user/list'));
 			}
 		}
 	}
@@ -160,7 +160,7 @@ class User extends CI_Controller
 	public function user_password_change($id)
 	{
 		$data['AccountArray'] = $this->Curd_model->getAccounts($id);
-		$this->load->view('manger/user-password-change', $data);
+		$this->load->view('manager/user-password-change', $data);
 	}
 
 	public function passwordUpdateCode()
@@ -174,7 +174,7 @@ class User extends CI_Controller
 			if ($password == $Cpassword) {
 				$cpass    = $this->security->xss_clean(password_hash($Cpassword, PASSWORD_BCRYPT));
 				if ($this->Curd_model->update('tbl_login', ['id' => $id], ['password' => $cpass]) == true) {
-					echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Update Password', "url" => base_url('manger/user/list')));
+					echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Update Password', "url" => base_url('manager/user/list')));
 				} else {
 					echo json_encode(array("statusCode" => 201, "msg" => 'Server Error'));
 				}
@@ -189,7 +189,7 @@ class User extends CI_Controller
 	public function friend($id)
 	{
 		$data['friendArray'] = $this->Curd_model->UserFriendList($id);
-		$this->load->view('manger/friend', $data);
+		$this->load->view('manager/friend', $data);
 	}
 
 	public function SendUserPay()
@@ -222,7 +222,7 @@ class User extends CI_Controller
 			];
 			if ($this->Curd_model->insert('tbl_payment_send_user', $data) == true) {
 				$this->Curd_model->walletUpdate($this->input->post('id'), $this->input->post('amount'), '-');
-				echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Send Paymanet', "url" => base_url('manger/user/user_payment')));
+				echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Send Paymanet', "url" => base_url('manager/user/user_payment')));
 			} else {
 				echo json_encode(array("statusCode" => 201, "msg" => 'Server Error!'));
 			}
@@ -242,6 +242,6 @@ class User extends CI_Controller
 		];
 		$data['ArrayPay'] = $this->Curd_model->SelectDataJoin($qey);
 		// pre($data['ArrayPay']);
-		$this->load->view('manger/user-send-payment-admin-history', $data);
+		$this->load->view('manager/user-send-payment-admin-history', $data);
 	}
 }

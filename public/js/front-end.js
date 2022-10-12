@@ -67,6 +67,7 @@ $(document).ready(function () {
                 contentType: false,
                 processData: false,
                 beforeSend: function () {
+                    $("#login").attr("disabled", "disabled");
                     $("#login").html('Please Wait...');
                 },
                 success: function (dataResult) {
@@ -80,6 +81,7 @@ $(document).ready(function () {
                     }
                 },
                 complete: function () {
+                    $("#login").removeAttr("disabled");
                     document.querySelector('#login').textContent = btn;
                 },
             });
@@ -270,6 +272,7 @@ $(document).ready(function () {
             contentType: false,
             processData: false,
             beforeSend: function () {
+                $("#signupUser").attr("disabled", "disabled");
                 $("#signupUser").html('Please Wait...');
             },
             success: function (dataResult) {
@@ -283,6 +286,7 @@ $(document).ready(function () {
                 }
             },
             complete: function () {
+                $("#signupUser").removeAttr("disabled");
                 document.querySelector('#signupUser').textContent = btn;
             },
         });

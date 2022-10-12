@@ -7,9 +7,9 @@ class Inquiry extends CI_Controller
         parent::__construct();
         $admin = $this->session->userdata('Login_Auth');
         $this->load->model('Curd_model');
-        $AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manger');
+        $AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manager');
         $Login['loginData'] = $AuthLogin;
-        $this->load->view('manger/template/array', $Login);
+        $this->load->view('manager/template/array', $Login);
         if (empty($AuthLogin)) {
             $this->session->unset_userdata('Login_Auth');
             $array_msg = array('msg' => 'Access Denied!', 'icon' => 'error');
@@ -22,7 +22,7 @@ class Inquiry extends CI_Controller
     {
         $data['title'] = 'Inquiry';
         $data['ArrayInquiry'] = $this->Curd_model->Select('tbl_inquiry');
-        $this->load->view('manger/inquiry', $data);
+        $this->load->view('manager/inquiry', $data);
     }
 
     public function Status()
@@ -39,11 +39,11 @@ class Inquiry extends CI_Controller
         if ($this->Curd_model->update('tbl_inquiry', ['id' => $id], ['status' => $status]) == true) {
             $array_msg = array('msg' => 'Successfully Update!', 'icon' => 'success');
             $this->session->set_flashdata($array_msg);
-            redirect(base_url('manger/inquiry/list'));
+            redirect(base_url('manager/inquiry/list'));
         } else {
             $array_msg = array('msg' => 'Server Error!', 'icon' => 'error');
             $this->session->set_flashdata($array_msg);
-            redirect(base_url('manger/inquiry/list'));
+            redirect(base_url('manager/inquiry/list'));
         }
     }
 

@@ -72,7 +72,7 @@ require_once('template/head.php');
                                                                         $status = $row['status'];
                                                                     }
                                                                     ?>
-                                                                    <a href="<?= base_url('manger/inquiry/status?id=' . $row['id'] . '&status=' . $row['status']) ?>" class="btn btn-<?= $color; ?> btn-rounded waves-effect waves-light"><?= $status ?></a>
+                                                                    <a href="<?= base_url('manager/inquiry/status?id=' . $row['id'] . '&status=' . $row['status']) ?>" class="btn btn-<?= $color; ?> btn-rounded waves-effect waves-light"><?= $status ?></a>
                                                                 </td>
                                                                 <td>
                                                                     <div class="btn-group" role="group" aria-label="Basic example">

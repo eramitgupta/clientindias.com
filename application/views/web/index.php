@@ -29,37 +29,37 @@
         <div class="partner-wrap owl-theme owl-carousel">
             <div class="partner-item">
                 <a href="#">
-                    <h4>Join Client India</h4>
+                    <img src="<?= base_url('public/icon/1.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <h4>Learn Business</h4>
+                    <img src="<?= base_url('public/icon/2.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <h4>Promote Our Courses</h4>
+                    <img src="<?= base_url('public/icon/3.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <h4>Create your Goal</h4>
+                    <img src="<?= base_url('public/icon/4.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <h4>Increase Sales</h4>
+                    <img src="<?= base_url('public/icon/5.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <h4>Get Commission</h4>
+                    <img src="<?= base_url('public/icon/6.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <h5>Achieve your dreams</h5>
+                    <img src="<?= base_url('public/icon/7.png') ?>" alt="Image">
                 </a>
             </div>
 
@@ -118,50 +118,70 @@
         </div>
     </div>
 </section>
-<section class="education-area ebeef5-bg-color">
-    <div class="container-fluid p-0">
+
+<section class="courses-area">
+    <div class="container">
+        <div class="section-title">
+            <h2>Why Choose Client Indias</h2>
+        </div>
         <div class="row">
-            <div class="col-lg-6">
-                <div class="education-img">
-                    <img src="<?= base_url('public/web/') ?>assets/img/education-img.png" alt="Image">
+            <div class="col-lg-3 col-md-6">
+                <div class="single-course" style="border-radius: 10px;">
+                    <center>
+                        <br>
+                        <a>
+                            <img src="<?= base_url('public/choose/tags.png') ?>" alt="Image" style="height: 100px;">
+                        </a>
+                    </center>
+                    <div style="padding: 20px;">
+                        <h4 class="text-center">Affordable Price</h4>
+                        <p>We are providing valuable courses at the most affordable price, So that every child is not disappointed because of the price and he can learn from here.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="education-content ptb-100">
-
-                    <h2>What Students Say About <span>Client India</span></h2>
-                    <p>Client India is changing the life of thousands of Indians. Who are becoming entrepreneur today through Client India
-                    </p>
-                    <p>
-                        Client India is a real company which is teaching us to do business that too in very low price
-                        <br>Yes we are earning money by learning from Client India and we can also believe on it. Because I have earned lakhs of rupees from this
-                    </p>
-                    <ul>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Learn Business
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Promote Our Courses
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Create your Goal
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Increase Sales
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Get Commission
-                        </li>
-
-                    </ul>
-
+            <div class="col-lg-3 col-md-6">
+                <div class="single-course" style="border-radius: 10px;">
+                    <center>
+                        <br>
+                        <a>
+                            <img src="<?= base_url('public/choose/online-course.png') ?>" alt="Image" style="height: 100px;">
+                        </a>
+                    </center>
+                    <div style="padding: 20px;">
+                        <h4 class="text-center">Valueable Courses</h4>
+                        <p>Client India is providing you the course which can make you a successful person in the coming time.</p>
+                    </div>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-course" style="border-radius: 10px;">
+                    <center>
+                        <br>
+                        <a>
+                            <img src="<?= base_url('public/choose/customer-service.png') ?>" alt="Image" style="height: 100px;">
+                        </a>
+                    </center>
+                    <div style="padding: 20px;">
+                        <h4 class="text-center">24/7 Support</h4>
+                        <p>We are providing best support for client India family. It's open every day and every time. You can text us we will respond with in 30 minutes 100% Success Rate.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-course" style="border-radius: 10px;">
+                    <center>
+                        <br>
+                        <a>
+                            <img src="<?= base_url('public/choose/success.png') ?>" alt="Image" style="height: 100px;">
+                        </a>
+                    </center>
+                    <div style="padding: 20px;">
+                        <h4 class="text-center">100% Success Rate</h4>
+                        <p>All they students who have learned though our courses, they earn high amount today though client India.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -314,95 +334,8 @@
         </div>
     </div>
 </section>
-<section class="teachers-area ebeef5-bg-color pt-100">
-    <div class="container">
-        <div class="section-title">
-            <h2>Our Team</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teachers">
-                    <img src="<?= base_url('public/web/') ?>assets/img/teachers-img/teachers-img-1.jpg" alt="Image">
-                    <div class="teachers-content">
-                        <ul>
-                            <li>
-                                <a href="#"><i class="bx bxl-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="bx bxl-linkedin-square"></i></a>
-                            </li>
-                        </ul>
-                        <h3>Earl Mcgowan</h3>
-                        <span>IT & Software</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teachers">
-                    <img src="<?= base_url('public/web/') ?>assets/img/teachers-img/teachers-img-2.jpg" alt="Image">
-                    <div class="teachers-content">
-                        <ul>
-                            <li>
-                                <a href="#"><i class="bx bxl-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="bx bxl-linkedin-square"></i></a>
-                            </li>
-                        </ul>
-                        <h3>Chris Miller</h3>
-                        <span>Mathematic</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teachers">
-                    <img src="<?= base_url('public/web/') ?>assets/img/teachers-img/teachers-img-3.jpg" alt="Image">
-                    <div class="teachers-content">
-                        <ul>
-                            <li>
-                                <a href="#"><i class="bx bxl-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="bx bxl-linkedin-square"></i></a>
-                            </li>
-                        </ul>
-                        <h3>Mark Dent</h3>
-                        <span>Programmer</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teachers">
-                    <img src="<?= base_url('public/web/') ?>assets/img/teachers-img/teachers-img-4.jpg" alt="Image">
-                    <div class="teachers-content">
-                        <ul>
-                            <li>
-                                <a href="#"><i class="bx bxl-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="bx bxl-linkedin-square"></i></a>
-                            </li>
-                        </ul>
-                        <h3>Lena Bodie</h3>
-                        <span>English</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
+
 
 <div class="video-area f5f6fa-bg-color">
     <div class="container">

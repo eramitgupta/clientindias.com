@@ -542,7 +542,7 @@ $(document).on('click', '.user_income_view_summary', function () {
     }
 });
 
-$(document).on('click', '.user_income_view_manger_summary', function () {
+$(document).on('click', '.user_income_view_manager_summary', function () {
     let data = $(this).attr("data");
     let id = $(this).attr("name");
     let value = $(this).attr("value");
@@ -551,7 +551,7 @@ $(document).on('click', '.user_income_view_manger_summary', function () {
     $('#exampleModalScrollableTitle').html('View Income' + ' '+ UserName + ' ' + value);
     if (id != '') {
         $.ajax({
-            url: base_url + "manger/user/UserIncomeViewSummary",
+            url: base_url + "manager/user/UserIncomeViewSummary",
             method: "POST",
             data: {
                 id: id,
@@ -564,8 +564,8 @@ $(document).on('click', '.user_income_view_manger_summary', function () {
         });
     }
 });
-// manger
-$(document).on('click', '.user_income_view_manger', function () {
+// manager
+$(document).on('click', '.user_income_view_manager', function () {
     let id = $(this).attr("id");
     let name = $(this).attr("name");
     let value = $(this).attr("value");
@@ -578,7 +578,7 @@ $(document).on('click', '.user_income_view_manger', function () {
     $('#exampleModalScrollableTitle').html('View Income' + ' ' + name + ' Wallet Bal ' + ' ₹ ' + value);
     if (id != '') {
         $.ajax({
-            url: base_url + "manger/user/UserIncomeView",
+            url: base_url + "manager/user/UserIncomeView",
             method: "POST",
             data: {
                 id: id,
@@ -612,7 +612,7 @@ $(document).on('click', '.user_income_pay', function () {
     $('#detailsModal').modal('show');
 });
 
-$(document).on('click', '.user_income_pay_manger', function () {
+$(document).on('click', '.user_income_pay_manager', function () {
     let id = $(this).attr("id");
     let name = $(this).attr("name");
     let value = $(this).attr("value");
@@ -661,27 +661,27 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $("#PayUserSendManger").on("click", function () {
-        let btn = document.querySelector('#PayUserSendManger').textContent;
+    $("#PayUserSendmanager").on("click", function () {
+        let btn = document.querySelector('#PayUserSendmanager').textContent;
         formData = new FormData(document.forms.namedItem("FormData"));
         let amount = $("#amount").val();
         let transaction_no = $("#transaction_no").val();
         let file = $("#file").val();
         if (amount != "" && transaction_no != "" && file != "") {
             $.ajax({
-                url: base_url + "manger/user/SendUserPay",
+                url: base_url + "manager/user/SendUserPay",
                 type: "POST",
                 data: formData,
                 cache: false,
                 contentType: false,
                 processData: false,
                 beforeSend: function () {
-                    $("#PayUserSendManger").html('Please Wait...');
+                    $("#PayUserSendmanager").html('Please Wait...');
                 },
                 success: function (dataResult) {
                     var dataResult = JSON.parse(dataResult);
                     if (dataResult.statusCode == 200) {
-                        $("#PayUserSendManger").attr("disabled", "disabled");
+                        $("#PayUserSendmanager").attr("disabled", "disabled");
                         sAlert('success', dataResult.msg, dataResult.url);
                         document.getElementById("FormData").reset();
                     } else if (dataResult.statusCode == 201) {
@@ -690,7 +690,7 @@ $(document).ready(function () {
                     }
                 },
                 complete: function () {
-                    document.querySelector('#PayUserSendManger').textContent = btn;
+                    document.querySelector('#PayUserSendmanager').textContent = btn;
                 },
             });
         } else {

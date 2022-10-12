@@ -42,16 +42,15 @@ class Login extends CI_Controller
 					$this->session->set_userdata('Login_Auth', $adminArray);
 					if ($admin->role == 'admin') {
 						echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Login', "url" => base_url() . 'admin/index'));
-					} else if ($admin->role == 'manger') {
-						echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Login', "url" => base_url() . 'manger/index'));
+					} else if ($admin->role == 'manager') {
+						echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Login', "url" => base_url() . 'manager/index'));
 					} else if ($admin->role == 'user') {
-						if($admin->status == 'Active'){
+						if ($admin->status == 'Active') {
 							echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Login', "url" => base_url() . 'user/index'));
-						}else{
+						} else {
 							echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Login', "url" => base_url() . ''));
 						}
 					}
-
 				} else {
 					echo json_encode(array("statusCode" => 201, "msg" => 'Enter password is incorrect'));
 				}
@@ -255,6 +254,8 @@ class Login extends CI_Controller
 
 	public function AccountotSession()
 	{
+	    $id	= $this->session->userdata('account_verification')['id'];
+		$this->Curd_model->Delete('tbl_login', ['id' => $id]);
 		$this->session->unset_userdata('account_verification');
 		redirect(base_url('sign-up'));
 	}

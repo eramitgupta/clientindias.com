@@ -40,7 +40,7 @@ class Sign_up extends CI_Controller
 		$this->form_validation->set_rules('referral_code', 'Referral Code', 'trim|strip_tags|required');
 		$this->form_validation->set_rules('full_names', 'Full Names', 'trim|strip_tags|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|strip_tags|required|valid_email|is_unique[tbl_login.email]');
-		$this->form_validation->set_rules('mobile', 'Mobile', 'trim|strip_tags|required|numeric|min_length[10]|is_unique[tbl_login.mobile]');
+		$this->form_validation->set_rules('mobile', 'Mobile', 'trim|strip_tags|required|numeric|min_length[10]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|strip_tags|required');
 		$this->form_validation->set_rules('cpassword', 'Confirm password', 'trim|strip_tags|required|matches[password]');
 		if ($this->form_validation->run() == false) {
@@ -49,7 +49,6 @@ class Sign_up extends CI_Controller
 			echo json_encode(array("statusCode" => 201, "msg" => array_filter($arrError)[1]));
 		} else {
 			if ($this->security->xss_clean($this->input->post('password')) == $this->security->xss_clean($this->input->post('cpassword'))) {
-
 				// auto increment ref code
 				$arr  = $this->Curd_model->LastRecord('tbl_login');
 				$refCode = $arr[0]['ref_code'];

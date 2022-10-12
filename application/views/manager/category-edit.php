@@ -34,7 +34,7 @@ require_once('template/head.php');
                     <div class="col-xl-9">
                         <div class="card">
                             <div class="card-body">
-                                <form method="POST" action="<?= base_url('manger/category/update'); ?>" enctype="multipart/form-data">
+                                <form method="POST" action="<?= base_url('manager/category/update'); ?>" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="mb-3">

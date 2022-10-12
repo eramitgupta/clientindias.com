@@ -7,9 +7,9 @@ class Transaction extends CI_Controller
         parent::__construct();
         $admin = $this->session->userdata('Login_Auth');
         $this->load->model('Curd_model');
-        $AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manger');
+        $AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manager');
         $Login['loginData'] = $AuthLogin;
-        $this->load->view('manger/template/array', $Login);
+        $this->load->view('manager/template/array', $Login);
         if (empty($AuthLogin)) {
             $this->session->unset_userdata('Login_Auth');
             $array_msg = array('msg' => 'Access Denied!', 'icon' => 'error');
@@ -22,7 +22,7 @@ class Transaction extends CI_Controller
     {
         $data['title'] = 'Payment History ';
         $data['ArrayPayInfo'] = $this->Curd_model->Payinfo();
-        $this->load->view('manger/transaction-history', $data);
+        $this->load->view('manager/transaction-history', $data);
     }
 
     public function Status()
@@ -50,11 +50,11 @@ class Transaction extends CI_Controller
             $this->Curd_model->insert('tbl_transfer_payment', $data);
             $array_msg = array('msg' => 'Successfully Active!', 'icon' => 'success');
             $this->session->set_flashdata($array_msg);
-            redirect(base_url('manger/transaction/list'));
+            redirect(base_url('manager/transaction/list'));
         } else {
             $array_msg = array('msg' => 'Server Error!', 'icon' => 'error');
             $this->session->set_flashdata($array_msg);
-            redirect(base_url('manger/transaction/list'));
+            redirect(base_url('manager/transaction/list'));
         }
     }
 
@@ -72,11 +72,11 @@ class Transaction extends CI_Controller
         if ($this->Curd_model->update('tbl_payment', ['id' => $id], ['status_pay' => $status]) == true) {
             $array_msg = array('msg' => 'Successfully Update!', 'icon' => 'success');
             $this->session->set_flashdata($array_msg);
-           redirect(base_url('manger/transaction/list'));
+           redirect(base_url('manager/transaction/list'));
         } else {
             $array_msg = array('msg' => 'Server Error!', 'icon' => 'error');
             $this->session->set_flashdata($array_msg);
-           redirect(base_url('manger/transaction/list'));
+           redirect(base_url('manager/transaction/list'));
         }
     }
 

@@ -7,9 +7,9 @@ class Category extends CI_Controller
         parent::__construct();
         $admin = $this->session->userdata('Login_Auth');
         $this->load->model('Curd_model');
-        $AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manger');
+        $AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manager');
         $Login['loginData'] = $AuthLogin;
-        $this->load->view('manger/template/array', $Login);
+        $this->load->view('manager/template/array', $Login);
         if (empty($AuthLogin)) {
             $this->session->unset_userdata('Login_Auth');
             $array_msg = array('msg' => 'Access Denied!', 'icon' => 'error');
@@ -22,7 +22,7 @@ class Category extends CI_Controller
     {
         $data['ArrayCategory'] = $this->Curd_model->Select('tbl_category');
         $data['title'] = 'Course List';
-        $this->load->view('manger/category-list', $data);
+        $this->load->view('manager/category-list', $data);
     }
 
     public function statusUpdate()
@@ -39,11 +39,11 @@ class Category extends CI_Controller
         if ($this->Curd_model->update('tbl_category', ['id' => $id], ['status' => $status]) == true) {
             $array_msg = array('msg' => 'Successfully Update!', 'icon' => 'success');
             $this->session->set_flashdata($array_msg);
-            redirect(base_url('manger/category/list'));
+            redirect(base_url('manager/category/list'));
         } else {
             $array_msg = array('msg' => 'Server Error!', 'icon' => 'error');
             $this->session->set_flashdata($array_msg);
-            redirect(base_url('manger/category/list'));
+            redirect(base_url('manager/category/list'));
         }
     }
 
@@ -52,7 +52,7 @@ class Category extends CI_Controller
     {
         $data['ArrayCategory'] = $this->Curd_model->Select('tbl_category', ['id' => $id]);
         $data['title'] = 'Course Edit';
-        $this->load->view('manger/category-edit', $data);
+        $this->load->view('manager/category-edit', $data);
     }
 
     public function update()
@@ -91,11 +91,11 @@ class Category extends CI_Controller
         if ($this->Curd_model->update('tbl_category', ['id' => $id], $array) == false) {
             $array_msg = array('msg' => 'Server Error!', 'icon' => 'error');
             $this->session->set_flashdata($array_msg);
-            redirect(base_url('manger/category/list'));
+            redirect(base_url('manager/category/list'));
         } else {
             $array_msg = array('msg' => 'Successfully Create!', 'icon' => 'success');
             $this->session->set_flashdata($array_msg);
-            redirect(base_url('manger/category/list'));
+            redirect(base_url('manager/category/list'));
         }
     }
 

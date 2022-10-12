@@ -7,9 +7,9 @@ class Authentication extends CI_Controller
         parent::__construct();
         $admin = $this->session->userdata('Login_Auth');
         $this->load->model('Curd_model');
-        $AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manger');
+        $AuthLogin = $this->Curd_model->authLogin($admin['id'], 'manager');
         $Login['loginData'] = $AuthLogin;
-        $this->load->view('manger/template/array', $Login);
+        $this->load->view('manager/template/array', $Login);
         if (empty($AuthLogin)) {
             $this->session->unset_userdata('Login_Auth');
             $array_msg = array('msg' => 'Access Denied!', 'icon' => 'error');
@@ -22,7 +22,7 @@ class Authentication extends CI_Controller
     public function password_change($id){
         $data['AccountArray'] = $this->Curd_model->Select('tbl_login', ['id'=> $id]);
         $data['title']  = 'Password Change';
-        $this->load->view('manger/password-change', $data);
+        $this->load->view('manager/password-change', $data);
     }
 
     public function passwordUpdateCode()
@@ -36,7 +36,7 @@ class Authentication extends CI_Controller
             if ($password == $Cpassword) {
                 $cpass    = $this->security->xss_clean(password_hash($Cpassword, PASSWORD_BCRYPT));
                 if ($this->Curd_model->update('tbl_login', ['id' => $id], ['password' => $cpass]) == true) {
-                    echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Update Password', "url" => base_url('manger/index')));
+                    echo json_encode(array("statusCode" => 200, "msg" => 'Successfully Update Password', "url" => base_url('manager/index')));
                 } else {
                     echo json_encode(array("statusCode" => 201, "msg" => 'Server Error'));
                 }

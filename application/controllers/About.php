@@ -18,6 +18,7 @@ class About extends CI_Controller
         }
         $data['ArraySettings'] = $this->Curd_model->Select('tbl_settings');
         $data['ArrayCategory'] = $this->Curd_model->Select('tbl_category');
+
         $this->load->view('web/about-us', $data);
     }
 }
