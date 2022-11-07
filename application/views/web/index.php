@@ -67,6 +67,60 @@
         </div>
     </div>
 </div>
+<section class="courses-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>Popular Courses</h2>
+        </div>
+        <div class="row">
+            <?php
+            foreach ($ArrayCategory as $course) {
+            ?>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-course">
+                        <a href="<?= base_url('package/details/' . $course['url']) ?>">
+                            <img src="<?= base_url('uploads/category/' . $course['icon']) ?>" alt="Image" style="height: 250px;">
+                        </a>
+                        <div class="course-content">
+                            <span class="price">₹<?= $course['price'] ?></span>
+                            <br>
+                            <a href="<?= base_url('package/details/' . $course['url']) ?>">
+                                <h3><?= $course['name'] ?></h3>
+                            </a>
+                            <ul class="rating">
+                                <li>
+                                    <i class="bx bxs-star"></i>
+                                </li>
+                                <li>
+                                    <i class="bx bxs-star"></i>
+                                </li>
+                                <li>
+                                    <i class="bx bxs-star"></i>
+                                </li>
+                                <li>
+                                    <i class="bx bxs-star"></i>
+                                </li>
+                                <li>
+                                    <i class="bx bxs-star"></i>
+                                </li>
+                                <li>
+                                    <span>5.0</span>
+
+                                </li>
+                            </ul>
+                            <p><?= $course['dsc'] ?></p>
+                            <ul class="lessons">
+                                <a href="<?= base_url('package/details/' . $course['url']) ?>" class="default-btn">
+                                    <li>Enroll Now &rarr; </li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
 <section class="achieve-area f5f6fa-bg-color pt-100 pb-70">
     <div class="container">
         <div class="section-title">
@@ -185,60 +239,7 @@
         </div>
     </div>
 </section>
-<section class="courses-area pt-100 pb-70">
-    <div class="container">
-        <div class="section-title">
-            <h2>Popular Courses</h2>
-        </div>
-        <div class="row">
-            <?php
-            foreach ($ArrayCategory as $course) {
-            ?>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-course">
-                        <a href="<?= base_url('package/details/' . $course['url']) ?>">
-                            <img src="<?= base_url('uploads/category/' . $course['icon']) ?>" alt="Image" style="height: 250px;">
-                        </a>
-                        <div class="course-content">
-                            <span class="price">₹<?= $course['price'] ?></span>
-                            <br>
-                            <a href="<?= base_url('package/details/' . $course['url']) ?>">
-                                <h3><?= $course['name'] ?></h3>
-                            </a>
-                            <ul class="rating">
-                                <li>
-                                    <i class="bx bxs-star"></i>
-                                </li>
-                                <li>
-                                    <i class="bx bxs-star"></i>
-                                </li>
-                                <li>
-                                    <i class="bx bxs-star"></i>
-                                </li>
-                                <li>
-                                    <i class="bx bxs-star"></i>
-                                </li>
-                                <li>
-                                    <i class="bx bxs-star"></i>
-                                </li>
-                                <li>
-                                    <span>5.0</span>
 
-                                </li>
-                            </ul>
-                            <p><?= $course['dsc'] ?></p>
-                            <ul class="lessons">
-                                <a href="<?= base_url('package/details/' . $course['url']) ?>" class="default-btn">
-                                    <li>Enroll Now &rarr; </li>
-                                </a>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
-        </div>
-    </div>
-</section>
 <section class="counter-area ebeef5-bg-color pt-100 pb-70">
     <div class="container">
         <div class="row">
