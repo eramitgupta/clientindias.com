@@ -7,7 +7,7 @@
             <h2>Terms & conditions</h2>
             <ul>
                 <li>
-                    <a href="index.html">
+                    <a href="<?= base_url(); ?>">
                         Home
                     </a>
                 </li>
