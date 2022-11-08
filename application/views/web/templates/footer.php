@@ -24,12 +24,6 @@
                         <a href="<?= $ArraySettings[0]['instagram'] ?>" target="_blank">
                             <i class="bx bxl-instagram-alt" style="font-size: 26px;"></i>
                         </a>
-                        <a href="<?= $ArraySettings[0]['telegram'] ?>" target="_blank">
-                            <i class="bx bxl-telegram" style="font-size: 26px;"></i>
-                        </a>
-                        <a href="<?= $ArraySettings[0]['linkedin'] ?>" target="_blank">
-                            <i class="bx bxl-linkedin-square" style="font-size: 26px;"></i>
-                        </a>
                         <a href="<?= $ArraySettings[0]['twitter'] ?>" target="_blank">
                             <i class="bx bxl-twitter" style="font-size: 26px;"></i>
                         </a>
@@ -97,10 +91,10 @@
         </div>
     </div>
 </footer>
-<div class="go-top">
+<!-- <div class="go-top">
     <i class='bx bx-chevrons-up'></i>
     <i class='bx bx-chevrons-up'></i>
-</div>
+</div> -->
 
 <script>
     function sAlert(icon, title, url = '') {

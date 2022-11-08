@@ -1,4 +1,27 @@
-
+<div class="container-fluid">
+    <div class="row" style="padding:10px; background-color: #ffb607; color:white; font-weight: bold;">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"><a style="color: white;" href="tel:<?= $ArraySettings[0]['mobile'] ?>"><?= $ArraySettings[0]['mobile'] ?></a></div>
+        <div class="col-sm-7 TopHeaderSection"><a style="color: white;" href="mailto:<?= $ArraySettings[0]['email'] ?>"><?= $ArraySettings[0]['email'] ?></a></div>
+        <div class="col-sm-2 topMi" style="text-align: right;">
+            <ul>
+                <a href="<?= $ArraySettings[0]['facebook'] ?>" target="_blank">
+                    <i class="bx bxl-facebook-circle" style="font-size: 26px; color: white;"></i>
+                </a>
+                <a href="<?= $ArraySettings[0]['instagram'] ?>" target="_blank">
+                    <i class="bx bxl-instagram-alt" style="font-size: 26px; color: white;"></i>
+                </a>
+                <a href="<?= $ArraySettings[0]['twitter'] ?>" target="_blank">
+                    <i class="bx bxl-twitter" style="font-size: 26px; color: white;"></i>
+                </a>
+                <a href="<?= $ArraySettings[0]['youtube'] ?>" target="_blank">
+                    <i class="bx bxl-youtube" style="font-size: 26px; color: white;"></i>
+                </a>
+            </ul>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
 <div class="navbar-area">
     <div class="mobile-nav">
         <a href="<?= base_url(); ?>" class="logo">
@@ -51,10 +74,10 @@
                                     Hi, <?= $loginArray[0]['name'] ?> <i class="bx bx-user-circle" style="font-size:25px;color: #ffb607;"></i>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <?php if($loginArray[0]['status'] == 'Active'): ?>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url($loginArray[0]['role'] . '/index') ?>" class="nav-link">Dashboard</a>
-                                    </li>
+                                    <?php if ($loginArray[0]['status'] == 'Active') : ?>
+                                        <li class="nav-item">
+                                            <a href="<?= base_url($loginArray[0]['role'] . '/index') ?>" class="nav-link">Dashboard</a>
+                                        </li>
                                     <?php endif; ?>
                                     <li class="nav-item">
                                         <a href="<?= base_url() . 'login/logout'; ?>" class="nav-link">Logout</a>
@@ -83,7 +106,7 @@
         <div class="dot-menu">
             <div class="inner">
                 <a href="<?= base_url('login') ?>">
-                    <img src="<?= base_url('public/user.png') ?>"  alt="" style="height: 45px; width: 70px; margin:-10px;">
+                    <img src="<?= base_url('public/user.png') ?>" alt="" style="height: 45px; width: 70px; margin:-10px;">
                 </a>
             </div>
         </div>

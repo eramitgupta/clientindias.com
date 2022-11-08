@@ -34,7 +34,7 @@
     <style>
         @media only screen and (max-width:600px) {
             .sliderhome {
-                height: 190px !important;
+                height: 180px !important;
                 width: 100% !important;
                 margin-top: 72px !important;
             }
@@ -59,6 +59,14 @@
         @media only screen and (min-device-width: 600px) and (max-device-width: 2000px) {
             .loginText {
                 display: none !important;
+            }
+        }
+        @media only screen and (max-width:600px) {
+            .TopHeaderSection {
+                display: none !important;
+            }
+            .topMi{
+                margin-top: -23px;
             }
         }
     </style>

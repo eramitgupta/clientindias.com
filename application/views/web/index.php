@@ -8,7 +8,7 @@
         foreach ($BannerArray as $Banner) {
         ?>
             <div class="carousel-item <?= $x == 1 ? 'active' : '' ?>">
-                <img src="<?= base_url('uploads/banner/' . $Banner['banner']) ?>" class="d-block w-100 sliderhome" style="height: 500px;">
+                <img src="<?= base_url('uploads/banner/' . $Banner['banner']) ?>" class="d-block w-100 sliderhome">
             </div>
         <?php $x++;
         } ?>
@@ -22,51 +22,54 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-
-
+<style>
+    .brandSize{
+        height: 52px !important;
+        width: auto !important;
+    }
+</style>
 <div class="partner-area f5f6fa-bg-color " style="padding: 40px;">
     <div class="container">
         <div class="partner-wrap owl-theme owl-carousel">
             <div class="partner-item">
                 <a href="#">
-                    <img src="<?= base_url('public/icon/1.png') ?>" alt="Image">
+                    <img class="brandSize" src="<?= base_url('public/icon/1.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <img src="<?= base_url('public/icon/2.png') ?>" alt="Image">
+                    <img class="brandSize" src="<?= base_url('public/icon/2.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <img src="<?= base_url('public/icon/3.png') ?>" alt="Image">
+                    <img class="brandSize" src="<?= base_url('public/icon/3.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <img src="<?= base_url('public/icon/4.png') ?>" alt="Image">
+                    <img class="brandSize" src="<?= base_url('public/icon/4.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <img src="<?= base_url('public/icon/5.png') ?>" alt="Image">
+                    <img class="brandSize" src="<?= base_url('public/icon/5.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <img src="<?= base_url('public/icon/6.png') ?>" alt="Image">
+                    <img class="brandSize" src="<?= base_url('public/icon/6.png') ?>" alt="Image">
                 </a>
             </div>
             <div class="partner-item">
                 <a href="#">
-                    <img src="<?= base_url('public/icon/7.png') ?>" alt="Image">
+                    <img class="brandSize" src="<?= base_url('public/icon/7.png') ?>" alt="Image">
                 </a>
             </div>
-
-
         </div>
     </div>
 </div>
+
 <section class="courses-area pt-100 pb-70">
     <div class="container">
         <div class="section-title">
@@ -87,27 +90,7 @@
                             <a href="<?= base_url('package/details/' . $course['url']) ?>">
                                 <h3><?= $course['name'] ?></h3>
                             </a>
-                            <ul class="rating">
-                                <li>
-                                    <i class="bx bxs-star"></i>
-                                </li>
-                                <li>
-                                    <i class="bx bxs-star"></i>
-                                </li>
-                                <li>
-                                    <i class="bx bxs-star"></i>
-                                </li>
-                                <li>
-                                    <i class="bx bxs-star"></i>
-                                </li>
-                                <li>
-                                    <i class="bx bxs-star"></i>
-                                </li>
-                                <li>
-                                    <span>5.0</span>
 
-                                </li>
-                            </ul>
                             <p><?= $course['dsc'] ?></p>
                             <ul class="lessons">
                                 <a href="<?= base_url('package/details/' . $course['url']) ?>" class="default-btn">
@@ -189,7 +172,7 @@
                     </center>
                     <div style="padding: 20px;">
                         <h4 class="text-center">Affordable Price</h4>
-                        <p>We are providing valuable courses at the most affordable price, So that every child is not disappointed because of the price and he can learn from here.</p>
+                        <p>We are providing valuable courses at the most affordable price, So that every child is not disappointed because of the price and he can learn from here. </p>
                     </div>
                 </div>
             </div>
@@ -203,7 +186,7 @@
                     </center>
                     <div style="padding: 20px;">
                         <h4 class="text-center">Valueable Courses</h4>
-                        <p>Client India is providing you the course which can make you a successful person in the coming time.</p>
+                        <p>Client India is providing you the course which can make you a successful person in the coming time. So Join Client India Immediately And Grow In Your Life </p>
                     </div>
                 </div>
             </div>
@@ -217,7 +200,7 @@
                     </center>
                     <div style="padding: 20px;">
                         <h4 class="text-center">24/7 Support</h4>
-                        <p>We are providing best support for client India family. It's open every day and every time. You can text us we will respond with in 30 minutes 100% Success Rate.</p>
+                        <p>We are providing best support for client India family. It's open every day and every time. You can text us we will respond with in 30 minutes</p>
                     </div>
                 </div>
             </div>
@@ -231,7 +214,7 @@
                     </center>
                     <div style="padding: 20px;">
                         <h4 class="text-center">100% Success Rate</h4>
-                        <p>All they students who have learned though our courses, they earn high amount today though client India.</p>
+                        <p>All they students who have learned though our courses, they earn high amount today though client India. You can check reviews on our website.</p>
                     </div>
                 </div>
             </div>

@@ -80,7 +80,6 @@ class Sign_up extends CI_Controller
 					'date' => date('Y-m-d H:i:s'),
 				];
 
-
 				if ($this->Curd_model->insertLastId('tbl_login', $data) == true) {
 					$username = $this->security->xss_clean($this->input->post('email'));
 					$ArrayData = $this->Curd_model->getByUsername($username);

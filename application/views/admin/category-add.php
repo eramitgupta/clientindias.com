@@ -66,7 +66,7 @@ require_once('template/head.php');
 
                                         <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label for="name" class="form-label">Description</label>
+                                                <label for="name" class="form-label">Description Line Break Add <?= htmlentities('<br>') ?></label>
                                                 <textarea name="dsc" class="form-control"></textarea>
                                                 <?= form_error('dsc'); ?>
                                             </div>

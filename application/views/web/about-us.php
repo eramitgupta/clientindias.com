@@ -1,13 +1,12 @@
 <?php require_once('templates/head.php'); ?>
 <?php require_once('templates/nav.php'); ?>
 
-
 <section class="event-area-two event-area-style ptb-100">
     <div class="container mt-5">
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="event-img">
-                    <img src="<?= base_url('public/2-.jpg') ?>" class="rounded-circle" alt="Image" style="height: 300px; width: 340px;">
+                    <img src="<?= base_url('public/2-.jpg') ?>" alt="Image" style="height: 250px; width: 340px;">
                 </div>
             </div>
             <div class="col-lg-6">
@@ -24,7 +23,7 @@
         <div class="row align-items-center mt-5">
             <div class="col-lg-6">
                 <div class="event-img">
-                    <img src="<?= base_url('public/1-.jpg') ?>" class="rounded-circle" alt="Image" style="height: 300px; width: 340px;">
+                    <img src="<?= base_url('public/1-.jpg') ?>"  alt="Image" style="height: 250px; width: 340px;">
                 </div>
             </div>
             <div class="col-lg-6">

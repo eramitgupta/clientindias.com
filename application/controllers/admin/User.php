@@ -20,7 +20,7 @@ class User extends CI_Controller
 
 	public function user_income()
 	{
-		$data['userArray'] = $this->Curd_model->Select('tbl_login', ['role' => 'user']);
+		$data['userArray'] = $this->Curd_model->Select('tbl_login', ['role' => 'user', 'status' => 'Active']);
 		$this->load->view('admin/user-income', $data);
 	}
 

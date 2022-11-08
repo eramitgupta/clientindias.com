@@ -215,7 +215,6 @@ class Login extends CI_Controller
 			if ($email == $semail['email']) {
 
 				if ($password == $cpassword) {
-
 					$data = [
 						'password' => $this->security->xss_clean(password_hash($cpassword, PASSWORD_BCRYPT)),
 					];
